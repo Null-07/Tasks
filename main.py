@@ -1,6 +1,4 @@
-```py
-print("hello")
+```c
+printf("hello")
 ```
-
-
 
