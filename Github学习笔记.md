@@ -6,13 +6,10 @@
 
 * ## 基础界面
 
-  进入Github的首页显示的就是如下这张图，可以对copilot进行提问，可以看到自己的仓库，可以找到自己的主页。在Github可以进行探讨，学习
-
-![这是图片](C:\Users\LENOVO\OneDrive\图片\屏幕快照\屏幕截图 2025-03-23 201821.png)
-
-点开上图的右上角的头像，就进入到your profile了，在个人主页中，可以看到自己的follower,following,收藏，展示区，以及在Github的提交次数。
-
-![](C:\Users\LENOVO\OneDrive\图片\屏幕快照\屏幕截图 2025-03-23 201946.png)
+  进入Github的首页可以看到home，然后在首页可以对copilot进行提问，可以看到自己的仓库，可以找到自己的主页。在Github可以进行探讨，学习
+  
+  点开右上角的头像，就进入到your profile了，在个人主页中，可以看到自己的follower,following,收藏，展示区，以及在Github的提交次数。
+  
 
 ---
 
