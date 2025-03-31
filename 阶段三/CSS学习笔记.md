@@ -1,10 +1,22 @@
-css全名是cascading style sheets，意为层叠样式表，用于定义网页样式和布局的样式表语言。通过css可以指定页面中各个元素的颜色、字体、大小、间距、边框、背景等样式，从而实现更精确的页面设计。
 
-语法
 
-css由选择器以及一条或多条声明组成，
+# CSS 学习笔记
 
-[![picture](https://camo.githubusercontent.com/2277ace336d948fa44502ec225214673c560fe22cea1f051a8af11e02eb4cdce/68747470733a2f2f7777772e72756e6f6f622e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031332f30372f36333238373743392d323436322d343144362d424430452d4637333137453443343241432e6a7067)](https://camo.githubusercontent.com/2277ace336d948fa44502ec225214673c560fe22cea1f051a8af11e02eb4cdce/68747470733a2f2f7777772e72756e6f6f622e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031332f30372f36333238373743392d323436322d343144362d424430452d4637333137453443343241432e6a7067)
+**css全名是cascading style sheets，意为层叠样式表，用于定义网页样式和布局的样式表语言。通过css可以指定页面中各个元素的颜色、字体、大小、间距、边框、背景等样式，从而实现更精确的页面设计。**
+
+---
+
+使用CSS是为了：
+
+* 实现内容与样式的分离，便于团队的开发
+* 样式复用，便于网站的后期维护
+* 页面的精准控制，让页面更精美
+
+---
+
+## 基本语法
+
+css由选择器以及一条或多条声明组成
 
 选择器通常是需要改变样式的 HTML 元素。每条声明由一个属性和一个值组成。
 
@@ -14,23 +26,49 @@ css由选择器以及一条或多条声明组成，
 
 声明的每一行属性，都要以英文分号结尾
 
-p { color:red; text-align:center; }
+<head>
+	<style>
+		选择器{
+			属性名：属性值;
+			属性名：属性值;
+		}
+	</style>
+</head>
 
-css导入方式
+---
 
-1. 内联样式
-2. 内部样式表
-3. 外部样式表
+## CSS应用方式
 
-选择器
+也称为CSS引用方式，有三种方式：
 
-类选择器用于描述一组元素的样式
+内部样式、行内样式、外部样式
+
+1. **内部样式**
+   也称为内嵌样式，在页面头部通过style标签定义
+
+   对当前页面中所有符合样式选择器的标签都起作用
+
+2. **行内样式**
+   也称为嵌入样式，使用HTML标签的style属性定义
+
+   只对设置style属性的标签起作用
+
+3. 外部样式
+   使用单独的 .CSS 文件定义，然后在页面中使用 link标签 或 @import指令 引入
+
+---
+
+## 选择器
+
+* ### 类选择器
+
+用于描述一组元素的样式
 
 类选择器以一个点 **.** 号显示
 
 .center {text-align:center;}
 
-元素选择器
+*  ### 元素选择器
 
 选择并设置所有
 
@@ -45,11 +83,13 @@ background-color:yellow;
 
 
 
-id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式，id 选择器以 "#" 来定义。
+* ### id 选择器
+
+  可以为标有特定 id 的 HTML 元素指定特定的样式，id 选择器以 "#" 来定义。
 
 \#para1 { text-align:center; color:red; }
 
-通用选择器
+* ### 通用选择器
 
 选择所有元素，并设置它们的背景色：
 
@@ -60,50 +100,31 @@ background-color:yellow;
 }
 ```
 
+**优先级：id > 类 > 元素 > 通用**
 
+---
 
-设置元素
+#### 设置元素基础样式  
+通过 CSS 属性控制元素的视觉表现：  
+- **大小**：`width`、`height`（如 `div { width: 200px; }`）  
+- **颜色**：`color`（文字颜色）、`background-color`（背景颜色）
+- **字体**：`font-family`（字体类型）、`font-size`（字号）  
+- **其他**：`border`（边框）、`padding`（内边距）、`margin`（外边距）
 
-p.ex { height:100px; width:100px; }
+---
 
-盒子模型
-
-[![picture](https://camo.githubusercontent.com/5293f5c93edcf4b72a94e510cdee525d9a654eda1fd5a52c4c8e87cd4712e9d0/68747470733a2f2f7777772e72756e6f6f622e636f6d2f696d616765732f626f782d6d6f64656c2e676966)](https://camo.githubusercontent.com/5293f5c93edcf4b72a94e510cdee525d9a654eda1fd5a52c4c8e87cd4712e9d0/68747470733a2f2f7777772e72756e6f6f622e636f6d2f696d616765732f626f782d6d6f64656c2e676966)
+### 盒子模型
 
 - **Margin(外边距)** - 清除边框外的区域，外边距是透明的。
-
 - **Border(边框)** - 围绕在内边距和内容外的边框。
-
 - **Padding(内边距)** - 清除内容周围的区域，内边距是透明的。
-
 - **Content(内容)** - 盒子的内容，显示文本和图像。
 
-  margin
+![](https://pic4.zhimg.com/v2-1c7edd49c7111272bb68402ecd202812_r.jpg)
 
-margin 清除周围的（外边框）元素区域。margin 没有背景颜色，是完全透明的。
 
-margin 可以单独改变元素的上，下，左，右边距，也可以一次改变所有的属性。
 
-[![picture](https://camo.githubusercontent.com/dbfe0ed4f79e0730b81bcefb9789e86a5a3291e6f44386cc920f5d7950319495/68747470733a2f2f7777772e72756e6f6f622e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031332f30382f566c7756692e706e67)](https://camo.githubusercontent.com/dbfe0ed4f79e0730b81bcefb9789e86a5a3291e6f44386cc920f5d7950319495/68747470733a2f2f7777772e72756e6f6f622e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031332f30382f566c7756692e706e67)
-
-可以指定不同的侧面不同的边距
-
-margin-top:100px; margin-bottom:100px; margin-right:50px; margin-left:50px;
-
-**margin:25px 50px 75px 100px;**
-
-- 上边距为25px
-- 右边距为50px
-- 下边距为75px
-- 左边距为100px
-
-**margin:25px 50px 75px;**
-
-- 上边距为25px
-- 左右边距为50px
-- 下边距为75px
-
-outline
+#### outline
 
 | 属性                                                         | 说明                           | 值                                                           |
 | ------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------ |
@@ -112,7 +133,7 @@ outline
 | [outline-style](https://www.runoob.com/cssref/pr-outline-style.html) | 设置轮廓的样式                 | none dotted dashed solid double groove ridge inset outset inherit |
 | [outline-width](https://www.runoob.com/cssref/pr-outline-width.html) | 设置轮廓的宽度                 | thin medium thick *length *inherit                           |
 
-border-style值
+#### border-style值
 
 none: 默认无边框
 
@@ -132,50 +153,37 @@ inset:定义一个3D的嵌入边框。效果取决于边框的颜色值
 
 outset: 定义一个3D突出边框。 效果取决于边框的颜色值
 
-定位
 
-position 属性的五个值：
 
-- static
+**盒模型类型**：  
 
- HTML 元素的默认值，即没有定位，遵循正常的文档流对象。静态定位的元素不会受到 top, bottom, left, right影响。
+- 标准盒模型：`width` 仅指内容宽度（默认）。  
+- IE 盒模型：`width` 包含内容、内边距和边框（通过 `box-sizing: border-box` 设置）。
 
- div.static { position: static; border: 3px solid #73AD21; }
+---
 
-- relative
+#### **CSS 的 5 种 Position 定位**  
+- **`static`**：默认定位，元素按文档流排列。 
+- **`relative`**：相对自身原始位置偏移（通过 `top`、`left` 调整），不脱离文档流。 
+- **`absolute`**：相对于最近的非 `static` 父元素定位，脱离文档流。 
+- **`fixed`**：相对于视口定位（如固定导航栏），脱离文档流 
+- **`sticky`**：结合 `relative` 和 `fixed`，滚动到阈值后固定 CSS 常用布局方式 
 
- 相对定位元素的定位是相对其正常位置。
+---
 
-- fixed
+#### CSS常用布局方式
 
- 元素的位置相对于浏览器窗口是固定位置。即使窗口是滚动的它也不会移动：
+- **浮动布局**：通过 `float` 实现元素横向排列（需清除浮动）  
+- **Flexbox**：弹性盒子布局，适合一维排列（通过 `display: flex` 启用）  
+- **Grid**：网格布局，适合复杂二维布局（通过 `display: grid` 启用）  
+- **响应式布局**：使用媒体查询（`@media`）适配不同屏幕尺寸
 
- p.pos_fixed { position:fixed; top:30px; right:5px; }
+---
 
-- absolute
+#### CSS 伪类
+伪类用于定义元素的特殊状态或位置：  
+- **`:hover`**：鼠标悬停时的样式。  
+- **`:active`**：元素被激活（如点击）时的样式。  
+- **`:nth-child(n)`**：匹配第 n 个子元素（如隔行换色）。  
+- **`:focus`**：元素获取焦点时的样式（如表单输入框）。
 
- 绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于
-
-- sticky
-
- 粘性定位的元素是依赖于用户的滚动，在 **position:relative** 与 **position:fixed** 定位之间切换。
-
-伪类
-
-CSS伪类是用来添加一些选择器的特殊效果。
-
-伪类的语法：
-
-selector:pseudo-class {property:value;}
-
-CSS类也可以使用伪类：
-
-selector.class:pseudo-class {property:value;}
-
-传统网页布局方式
-
-1. 标准流
-2. 浮动
-3. 定位
-4. flexbox
-5. grid
