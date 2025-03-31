@@ -159,8 +159,6 @@ target属性定义链接的打开方式
 
 可以包含其他块级元素和行内元素
 
-常见的有<div><p><h1><table><form>  等
-
 ![](https://github.com/Null-07/Photos/blob/main/%E5%9D%97%E5%85%83%E7%B4%A0.png?raw=true)
 
 * 行内元素（inline）
@@ -172,8 +170,6 @@ target属性定义链接的打开方式
 只占据其内容所需的宽度，而不是整行的宽度。
 
 不能包含块级元素，但可以包含其他行内元素。
-
-常见的有<span><a><strong><img>
 
 ![](https://github.com/Null-07/Photos/blob/main/%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0.png?raw=true)
 
