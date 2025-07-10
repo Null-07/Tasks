@@ -36,3 +36,11 @@
 
 ---
 
+>* ## 后期考核
+>
+>[CSS3和JS学习笔记](https://github.com/Null-07/Tasks/blob/main/%E5%90%8E%E6%9C%9F%E8%80%83%E6%A0%B8/CSS3%20%E5%92%8C%20JS%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
+>
+>[个人网站](https://github.com/Null-07/Tasks/tree/main/%E5%90%8E%E6%9C%9F%E8%80%83%E6%A0%B8/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99)
+
+---
+
