@@ -60,5 +60,55 @@ mediatype（*注：可用not/only修饰，表示不匹配/只匹配）
 
 ## Flex布局和Grid布局
 
-DOM的api不属于JS语言的本身，而是浏览器实现了api，并且浏览器给了开发者用JS来操作dom的权利。
+**Flex布局**
 
+含义：flex布局，也被称之为弹性盒子布局，是CSS3里面新增的一种布局 方式，通过使用flex布局，我们可以让布局更加便捷有效。
+
+如何触发弹性盒子：给父元素添加display属性，并且将取值设置为flex。
+
+触发后的影响：
+
+* 子元素默认横向显示（只会影响子元素不影响孙子辈分元素，类似于浮动，但与浮动没有关系）
+
+* 子元素会默认变成块级元素，能设置宽度高度
+
+* 如果只有一个子元素的话，则给子元素添加margin：auto的时候会让子元素直接实现水平垂直正居中显示 
+
+![flex布局](https://geekdaxue.co/uploads/projects/letwei@ghs43g/5f27501e43b5f392558fa5d7793bc939.webp)
+
+采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。
+
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+
+容器的六个属性
+
+* flex-direction
+* flex-wrap
+* flex-flow
+* justify-content
+* align-items
+* align-content
+
+---
+
+**Grid布局**
+
+含义：Grid布局，也被称之为网格布局，是将页面的父元素划分成一个个小的格子，然后通过这些小的格子进行合并来制作各种不同的网站效果 
+
+如何触发网格：给父元素添加display属性，并且将取值设置成：grid/inline-grid（grid：代表的是块状网格，默认独占一行，类似于块级元素； inline-grid：代表的是行内块网格，与行内块元素类似） 
+
+特点：划分行列之后，才能将里面的区域进行划分，才能显示网格
+
+grid布局与flex布局异同，网格与表格区别 ：
+
+grid与flex布局：相同点：都有容器和项目之分                                                     
+
+​                             不同点：flex被称之为一维布局，也叫做轴线布局；grid被称之为二维布局，有行列之分 
+
+grid与表格：相同点：都有行列 之分，都能划分格子                                             
+
+​                      不同点：代码嵌套
+
+grid-template-columns
+
+grid-template-areas
